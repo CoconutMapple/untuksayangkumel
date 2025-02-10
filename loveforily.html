@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Shape</title>
     <style>
+        /* Container untuk hati */
         .heart {
             width: 100px;
             height: 90px;
             position: relative;
             animation: beat 1s infinite;
+            margin: 100px auto; /* Pusatkan di tengah layar */
         }
 
+        /* Bagian kiri hati */
         .heart::before,
         .heart::after {
             content: "";
@@ -21,16 +24,23 @@
             height: 80px;
             background: red;
             border-radius: 50px 50px 0 0;
+        }
+
+        /* Bagian kiri hati */
+        .heart::before {
+            left: 50px;
             transform: rotate(-45deg);
             transform-origin: 0 100%;
         }
 
+        /* Bagian kanan hati */
         .heart::after {
-            left: 50px;
+            left: 0;
             transform: rotate(45deg);
             transform-origin: 100% 100%;
         }
 
+        /* Animasi detak hati */
         @keyframes beat {
             0%, 100% {
                 transform: scale(1);
